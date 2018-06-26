@@ -1,24 +1,18 @@
-import java.io.BufferedReader
-import java.io.InputStreamReader
 import java.util.*
 
 fun main(args: Array<String>) {
     val reader = Scanner(System.`in`)
     while (reader.hasNextLine()){
         var str = reader.nextLine()
-        //var strRes = str
         var arrayInt = mutableMapOf<Char, Int>()
         str = str.toLowerCase()
         var i = 0
         while (i < str.length) {
-            //var mul = false
             if (!arrayInt.containsKey(str[i])) {
-                var res = 1;
+                var res = 1
                 var j: Int = i + 1
                 while (j < str.length) {
-                    if (str[i] == str[j]) {
-                        res++
-                    }
+                    if (str[i] == str[j]) res++
                     j++
                 }
                 arrayInt.put(str[i],res)
